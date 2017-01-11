@@ -62,7 +62,7 @@
         <th><?=$this->transEsc('Main Author')?>: </th>
         <td>
          <? foreach ($authors['main'] as $array): ?>
-            <span property="author"><a href="<?=$this->record($this->driver)->getLink('author', $array['name'])?>"><?=$this->escapeHtml($array['name'])?></a>
+            <span property="author"><span><?=$this->escapeHtml($array['name'])?></span>
             <? if(isset($array['role'])): ?><?=$array['role']?><? endif;?><br/></span><? endforeach; ?>
         </td>
       </tr>
@@ -71,7 +71,7 @@
       <? if (isset($authors['corporate']) && !empty($authors['corporate'])): ?>
       <tr>
         <th><?=$this->transEsc('Corporate Author')?>: </th>
-        <td property="creator"><a href="<?=$this->record($this->driver)->getLink('author', $authors['corporate'])?>"><?=$this->escapeHtml($authors['corporate'])?></a></td>
+        <td property="creator"><span><?=$this->escapeHtml($authors['corporate'])?></span></td>
       </tr>
       <? endif; ?>
 
@@ -80,7 +80,7 @@
         <th><?=$this->transEsc('Other Authors')?>: </th>
         <td>
           <? foreach ($authors['secondary'] as $array): ?>
-            <span property="contributor"><a href="<?=$this->record($this->driver)->getLink('author', $array['name'])?>"><?=$this->escapeHtml($array['name'])?></a>
+            <span property="contributor"><span><?=$this->escapeHtml($array['name'])?></span>
             <? if(isset($array['role'])): ?><?=$array['role']?><? endif;?><br/></span><? endforeach; ?>
         </td>
       </tr>
