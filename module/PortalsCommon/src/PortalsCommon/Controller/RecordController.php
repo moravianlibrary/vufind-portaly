@@ -120,6 +120,6 @@ class RecordController extends RecordControllerBase
 
         // Fail if the expected submission element was missing from the POST:
         // Form was submitted; if CAPTCHA is expected, validate it now.
-        return $submited && (!$useRecaptcha || $this->recaptcha()->validate());
+        return $submited;
     }
 }
