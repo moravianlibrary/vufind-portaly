@@ -53,7 +53,20 @@
           <?=!empty($summDate) ? ' (' . $this->escapeHtml($summDate[0]) . ')' : ''?>
         <? elseif (!empty($summDate)): ?>
           <?=!empty($summAuthor) ? '<br />' : ''?>
-          <?=!empty($summDate[0]) ? $this->transEsc('Published') . ' ' . $this->escapeHtml($summDate[0]) : ''?>
+          <?=!empty($summDate[0]) ? $this->transEsc('Published') . ' ' : '' //. $this->escapeHtml($summDate[0]) : ''?>
+          <? $summPublished = $this->driver->getPublicationDetails(); if (!empty($summPublished)): ?>
+            <? foreach ($summPublished as $field): ?>
+              <? $pubPlace = $field->getPlace(); if (!empty($pubPlace)): ?>
+                <?=$this->escapeHtml($pubPlace);?>
+              <? endif; ?>
+              <? $pubName = $field->getName(); if (!empty($pubName)): ?>
+                <?=$this->escapeHtml($pubName);?>
+              <? endif; ?>
+              <? $pubDate = $field->getDate(); if (!empty($pubDate)): ?>
+                <?=$this->escapeHtml($pubDate);?>
+              <? endif; ?>
+            <? endforeach; ?>
+          <? endif; ?>
         <? endif; ?>
         <? $summInCollection = $this->driver->getContainingCollections(); if (!empty($summInCollection)): ?>
           <? foreach ($summInCollection as $collId => $collText): ?>
