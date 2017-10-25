@@ -41,7 +41,15 @@
         <td><xsl:value-of select="@ind1"/></td>
         <td><xsl:value-of select="@ind2"/></td>
         <td>
-          <xsl:apply-templates select="marc:subfield"/>
+          <xsl:choose>
+            <!-- to indent long titles / authors -->
+            <xsl:when test="@tag = 245">
+              <span class="field245"><xsl:apply-templates select="marc:subfield" /></span>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:apply-templates select="marc:subfield"/>
+            </xsl:otherwise>
+          </xsl:choose>
         </td>
       </tr>
   </xsl:template>
