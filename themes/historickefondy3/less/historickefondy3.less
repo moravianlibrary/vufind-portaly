@@ -48,13 +48,15 @@ hr {
 //searchbox size increase
 @media (max-width: 767px) {
   .navbar-form {
-    padding: 15px 15px;
+    padding: 0px 15px 0px 15px;
   }
 }
 
 @media (min-width: 768px) {
   #searchForm_lookfor {
-    min-width: 530px;
+    width: calc(63%);
+    //width: calc(100% - 180px); //CSS3, a smoother solution, however LESS compiler fails to process (percent - px)
+    max-width: 2560px;
   }
 
   .search-query {
@@ -67,30 +69,22 @@ hr {
 }
 
 @media (min-width: 992px) {
-  #searchForm_lookfor{
-    min-width: 270px;
+  #searchForm_lookfor {
+    width: calc(72%);
   }
 
   .search-query {
     min-width: 620px;
   }
-
-  .navbar-form {
-    padding: 0px 0px;
-  }
 }
 
 @media (min-width: 1200px) {
-  #searchForm_lookfor{
-    min-width: 370px;
+  #searchForm_lookfor {
+    width: calc(76%);
   }
 
   .search-query {
     min-width: 820px;
-  }
-
-  .navbar-form {
-    padding: 0px 0px;
   }
 }
 
