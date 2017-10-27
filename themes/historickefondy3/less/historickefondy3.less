@@ -54,9 +54,8 @@ hr {
 
 @media (min-width: 768px) {
   #searchForm_lookfor {
-    width: calc(63%);
-    //width: calc(100% - 180px); //CSS3, a smoother solution, however LESS compiler fails to process (percent - px)
     max-width: 2560px;
+    width: ~"calc(100% - 275px)"; //calc(100% - 250px), written in a way that ensures LESS processes this
   }
 
   .search-query {
@@ -69,20 +68,12 @@ hr {
 }
 
 @media (min-width: 992px) {
-  #searchForm_lookfor {
-    width: calc(72%);
-  }
-
   .search-query {
     min-width: 620px;
   }
 }
 
 @media (min-width: 1200px) {
-  #searchForm_lookfor {
-    width: calc(76%);
-  }
-
   .search-query {
     min-width: 820px;
   }
