@@ -58,6 +58,21 @@ class SolrMarc extends ParentSolrMarc
         
         if (!isset($linkEnd) ) $linkEnd = '';
         $externalLink =  $linkBase . $finalID . $linkEnd;
+        //URL redirect for historickefondy external depositories
+        switch ($ins) {
+            case "mzk_zno":
+                $externalLink = "http://aleph.nkp.cz/F/?func=direct&doc_number=000003377&local_base=ADR";
+                break;
+            case "mzk_raj":
+                $externalLink = "http://aleph.nkp.cz/F/?func=direct&doc_number=000003269&local_base=ADR";
+                break;
+            case "mzk_dac":
+                $externalLink = "http://aleph.nkp.cz/F/?func=direct&doc_number=000003448&local_base=ADR";
+                break;
+            case "mzk_tre":
+                $externalLink = "http://aleph.nkp.cz/F/?func=direct&doc_number=000003447&local_base=ADR";
+                break;
+        }
         return array(
                    array('institution' => $ins, 
                          'url' => $externalLink,
