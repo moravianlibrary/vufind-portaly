@@ -50,7 +50,12 @@
             <th><?=$this->transEsc('Item Notes Citation References')?>: </th>
             <td>
                 <? foreach ($extendedNotes['510'] as $field): ?>
-                    <?=$this->escapeHtml($field)?><br/>
+                    <? if (strpos($field, 'http') !== false) :?>
+                        <?='<a href="' . $this->escapeHtml($field) . '">' . $field . '</a>'?>
+                    <? else : ?>
+                        <?=($this->escapeHtml($field))?>
+                    <?endif;?>
+                    <br/>
                 <? endforeach; ?>
             </td>
         </tr>
