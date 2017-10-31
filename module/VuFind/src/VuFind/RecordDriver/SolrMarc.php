@@ -311,6 +311,22 @@ class SolrMarc extends SolrDefault
     }
 
     /**
+     * Get extended notes on the record (501, 505, 510, 561, 563, 590)
+     *
+     * @return array
+     */
+    public function getExtendedNotes()
+    {
+        return array(
+                '501' => $this->getFieldArray('501'),
+                '505' => $this->getFieldArray('505'),
+                '510' => $this->getFieldArray('510'),
+                '561' => $this->getFieldArray('561'),
+                '563' => $this->getFieldArray('563'),
+                '590' => $this->getFieldArray('590'));
+    }
+
+    /**
      * Get human readable publication dates for display purposes (may not be suitable
      * for computer processing -- use getPublicationDates() for that).
      *

@@ -23,6 +23,70 @@
     </tr>
   <? endif; ?>
 
+  <? $extendedNotes = $this->driver->getExtendedNotes(); if (!empty($extendedNotes)): ?>
+    <? $contentDisplayed = true; ?>
+        <? if (!empty($extendedNotes['501'])) :?>
+        <tr valign="top">
+            <th><?=$this->transEsc('Item Notes Together')?>: </th>
+            <td>
+            <? foreach ($extendedNotes['501'] as $field): ?>
+                <?=$this->escapeHtml($field)?><br/>
+            <? endforeach; ?>
+            </td>
+        </tr>
+        <? endif; ?>
+        <? if (!empty($extendedNotes['505'])) :?>
+        <tr valign="top">
+            <th><?=$this->transEsc('Item Notes Content')?>: </th>
+            <td>
+                <? foreach ($extendedNotes['505'] as $field): ?>
+                    <?=$this->escapeHtml($field)?><br/>
+                <? endforeach; ?>
+            </td>
+        </tr>
+        <? endif; ?>
+        <? if (!empty($extendedNotes['510'])) :?>
+        <tr valign="top">
+            <th><?=$this->transEsc('Item Notes Citation References')?>: </th>
+            <td>
+                <? foreach ($extendedNotes['510'] as $field): ?>
+                    <?=$this->escapeHtml($field)?><br/>
+                <? endforeach; ?>
+            </td>
+        </tr>
+        <? endif; ?>
+        <? if (!empty($extendedNotes['561'])) :?>
+        <tr valign="top">
+            <th><?=$this->transEsc('Item Notes Owner History')?>: </th>
+            <td>
+                <? foreach ($extendedNotes['561'] as $field): ?>
+                    <?=$this->escapeHtml($field)?><br/>
+                <? endforeach; ?>
+            </td>
+        </tr>
+        <? endif; ?>
+        <? if (!empty($extendedNotes['563'])) :?>
+        <tr valign="top">
+            <th><?=$this->transEsc('Item Notes Binding')?>: </th>
+            <td>
+                <? foreach ($extendedNotes['563'] as $field): ?>
+                    <?=$this->escapeHtml($field)?><br/>
+                <? endforeach; ?>
+            </td>
+        </tr>
+        <? endif; ?>
+        <? if (!empty($extendedNotes['590'])) :?>
+        <tr valign="top">
+            <th><?=$this->transEsc('Item Notes Deficiency')?>: </th>
+            <td>
+                <? foreach ($extendedNotes['590'] as $field): ?>
+                    <?=$this->escapeHtml($field)?><br/>
+                <? endforeach; ?>
+            </td>
+        </tr>
+        <? endif; ?>
+  <? endif; ?>
+
   <? $physical = $this->driver->getPhysicalDescriptions(); if (!empty($physical)): ?>
     <? $contentDisplayed = true; ?>
     <tr valign="top">
