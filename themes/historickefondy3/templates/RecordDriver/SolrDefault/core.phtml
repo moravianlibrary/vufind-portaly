@@ -2,7 +2,7 @@
 
 
   <div class="col-md-9 switch-margins">
-    <h3 property="name"><?=$this->escapeHtml($this->driver->getShortTitle())?><br><?=$this->escapeHtml($this->driver->getSubtitle() . ' ' . $this->driver->getTitleSection())?></h3>
+      <h3 property="name"><?=$this->escapeHtml($this->driver->getShortTitle())?><br><span id="header-subtitle"><?=$this->escapeHtml($this->driver->getSubtitle() . ' ' . $this->driver->getTitleSection())?></span></h3>
 
     <? $summary = $this->driver->getSummary(); $summary = isset($summary[0]) ? $summary[0] : false; ?>
     <? if ($summary): ?>
