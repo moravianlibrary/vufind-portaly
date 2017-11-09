@@ -73,12 +73,18 @@ function loadVis(facetFields, searchParams, baseURL, zooming) {
           hasFilter = false;
         }
 
+        //sort the dataset, define cutoff interval (no outliers in the graph wanted)
+        val['data'] = val['data'].sort();
+        var graphPercentileCutoff = 0.85;
+        var graphPercentileMinimumValue = parseInt(val['data'].length*(1-graphPercentileCutoff));
+        var graphPercentileMaximumValue = parseInt(val['data'].length*(graphPercentileCutoff));
+
         //check if the min and max value have been set otherwise set them to the ends of the graph
         if (val['min'] == 0) {
-          val['min'] = val['data'][0][0] - 5;
+          val['min'] = val['data'][graphPercentileMinimumValue][0];
         }
         if (val['max']== 0) {
-          val['max'] =  parseInt(val['data'][val['data'].length - 1][0], 10) + 5;
+          val['max'] = val['data'][graphPercentileMaximumValue][0];
         }
 
         if (zooming) {
