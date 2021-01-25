@@ -120,7 +120,7 @@
 
       <? foreach ($this->driver->getExternalLinks() as $current): ?>
         <? if (isset($current['url']) && !empty($current['url'])): ?>
-          <a href="<?=$current['url']?>" class="fulltext" target="new" data-link-type="Online Access" data-bib-base="MZK01">
+          <a href="<?=$current['url']?>" class="fulltext" target="new" data-link-type="Online Access" data-bib-base="HIST">
             <i class="fa fa-external-link"></i><?=$this->transEsc(strtoupper($current['institution']))?>
           </a>
         <? else: ?>

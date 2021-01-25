@@ -177,7 +177,7 @@
         <th><?=$this->transEsc('Online Access')?>: </th>
         <td>
           <? foreach ($urls as $current): ?>
-            <a href="<?=$this->escapeHtmlAttr($this->proxyUrl($current['url']))?>" data-link-type="Online Access" data-bib-base="MZK01">
+            <a href="<?=$this->escapeHtmlAttr($this->proxyUrl($current['url']))?>" data-link-type="Online Access" data-bib-base="HIST">
               <?=$this->escapeHtml($current['desc'])?>
             </a>
             <br/>
