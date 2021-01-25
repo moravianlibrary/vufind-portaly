@@ -120,7 +120,9 @@
 
       <? foreach ($this->driver->getExternalLinks() as $current): ?>
         <? if (isset($current['url']) && !empty($current['url'])): ?>
-          <a href="<?=$current['url']?>" class="fulltext" target="new"><i class="fa fa-external-link"></i><?=$this->transEsc(strtoupper($current['institution']))?></a>
+          <a href="<?=$current['url']?>" class="fulltext" target="new" data-link-type="Online Access" data-bib-base="MZK01">
+            <i class="fa fa-external-link"></i><?=$this->transEsc(strtoupper($current['institution']))?>
+          </a>
         <? else: ?>
           <a href="<?=$this->recordLink()->related(array('type' => 'bib', 'value' => $current['id']))?>" class="local"><?=$this->transEsc(strtoupper($current['institution']))?></a>
         <? endif; ?>
